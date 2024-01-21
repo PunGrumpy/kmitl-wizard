@@ -8,8 +8,7 @@
 </script>
 
 <div
-  class="bg-orange-100/50 border-l-2 border-orange-200 px-3 py-1 h-full flex flex-col justify-between rounded
-  hover:border-orange-400 hover:scale-105 hover:rotate-2 transition-all"
+  class="bg-white shadow-md rounded-lg p-4 hover:shadow-lg transition-shadow flex flex-col justify-between h-full"
 >
   <div class="flex justify-between text-xs text-gray-600">
     <p>{subject.time.type}</p>
@@ -17,7 +16,7 @@
       {subject.time.start} - {subject.time.end}
     </p>
   </div>
-  <h3 class="text-orange-400 text-left text-sm">{subject.name}</h3>
+  <h3 class="text-orange-500 font-bold text-lg">{subject.name}</h3>
   <div class="flex justify-between text-xs text-gray-600">
     <p class="whitespace-nowrap">
       section({getSectionType()})

@@ -19,35 +19,31 @@
   const formatTime = (hour: number) => `${hour.toString().padStart(2, '0')}:00`
 </script>
 
-<div>
-  <table class="w-full rounded-2xl table-auto" cellspacing={44}>
-    <thead>
+<div class="overflow-x-auto">
+  <table class="min-w-full bg-white rounded-2xl">
+    <thead class="bg-gray-100">
       <tr>
-        <th scope="col" />
+        <th scope="col" class="p-2" />
         {#each hours as hour (hour)}
           {#if hour < 20 - 1}
-            <th
-              scope="col"
-              class="border-x border-orange-100 w-[8.33%]"
-              colspan="4"
-            >
+            <th scope="col" class="border-x border-gray-200 p-2" colspan="4">
               {`${formatTime(hour)} - ${formatTime(hour + 1)}`}
             </th>
           {/if}
         {/each}
-      </tr></thead
-    >
+      </tr>
+    </thead>
     <tbody>
-      {#each days as day (day.name)}
-        <tr class="hover:bg-orange-100/20 group">
-          <th
-            scope="row"
-            class="text-right font-semibold text-sm text-orange-300 whitespace-nowrap group-hover:scale-125 group-hover:text-orange-400 transition-all"
-          >
+      {#each days as day, i (day.name)}
+        <tr class="{i % 2 === 0 ? 'bg-gray-50' : 'bg-white'} hover:bg-gray-100">
+          <th scope="row" class="text-right font-semibold text-sm p-2">
             {day.name}
           </th>
           {#each createTimeSlot(schedule, day.code) as slot}
-            <td class="border-x border-orange-100" colspan={slot?.colSpan || 1}>
+            <td
+              class="border-x border-gray-200 p-2"
+              colspan={slot?.colSpan || 1}
+            >
               {#if slot}
                 <CardSubject subject={slot} />
               {/if}
