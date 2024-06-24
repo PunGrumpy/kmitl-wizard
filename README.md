@@ -15,6 +15,7 @@
 - [x] Display time of the class
 - [x] Download schedule table as an image
 - [x] Copy schedule table to clipboard
+- [x] Dark mode
 
 ## 🧑‍💻 Stacks
 
