@@ -41,7 +41,7 @@ jobs:
       - name: 🚛 Upload Build Artifact
         uses: actions/upload-artifact@v4
         with:
-          name: kmitl-x
+          name: kmitl-wizard
           path: dist/*
 
   release:
@@ -67,7 +67,7 @@ jobs:
         if: ${{ steps.release.outputs.release_created }}
         uses: actions/download-artifact@v4
         with:
-          name: kmitl-x
+          name: kmitl-wizard
           path: dist/
       - name: 🏷️ Tag stable versions
         if: ${{ steps.release.outputs.release_created }}
