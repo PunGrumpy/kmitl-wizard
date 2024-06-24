@@ -14,6 +14,9 @@ export default defineManifest(() => ({
   version: `${major}.${minor}.${patch}.${label !== '0' ? label : ''}`,
   version_name: version,
   icons: {
+    '16': 'src/assets/icons/icon-16.png',
+    '32': 'src/assets/icons/icon-32.png',
+    '64': 'src/assets/icons/icon-64.png',
     '128': 'src/assets/icons/icon-128.png'
   },
   content_scripts: [
