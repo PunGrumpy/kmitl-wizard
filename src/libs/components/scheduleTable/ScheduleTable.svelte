@@ -58,7 +58,7 @@
 <style scoped>
   th,
   td {
-    @apply font-prompt;
+    @apply font-mplus;
   }
   th {
     @apply font-normal whitespace-nowrap text-orange-400;

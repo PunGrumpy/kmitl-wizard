@@ -4,7 +4,7 @@
 </script>
 
 <div
-  class="bg-orange-100/50 text-orange-500 rounded-lg font-prompt px-4 py-4 border border-orange-200 flex justify-between items-center"
+  class="bg-orange-100/50 text-orange-500 rounded-lg font-mplus px-4 py-4 border border-orange-200 flex justify-between items-center"
 >
   <img
     src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/94/KMITL_Sublogo.svg/1024px-KMITL_Sublogo.svg.png"
