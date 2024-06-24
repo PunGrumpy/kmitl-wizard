@@ -1,5 +1,5 @@
 import { defineManifest } from '@crxjs/vite-plugin'
-import packageJson from './package.json'
+import packageJson from '../package.json'
 
 const { name, version, description } = packageJson
 
@@ -11,7 +11,7 @@ export default defineManifest(() => ({
   manifest_version: 3,
   name,
   description,
-  version: `${major}.${minor}.${patch}.${label}`,
+  version: `${major}.${minor}.${patch}.${label !== '0' ? label : ''}`,
   version_name: version,
   icons: {
     '128': 'src/assets/icons/icon-128.png'

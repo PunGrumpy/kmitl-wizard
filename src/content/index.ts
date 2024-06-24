@@ -1,6 +1,6 @@
 import StudentTable from '../pages/StudentTable.svelte'
 import StudentScraping from '../utils/StudentScraping'
-import '../assets/css/tailwind.css'
+import './styles.css'
 
 // Load font
 const font = document.createElement('style')
