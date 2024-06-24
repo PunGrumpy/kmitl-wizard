@@ -1,0 +1,103 @@
+# name: 🤹‍♂️ Continuous Integration
+
+# on:
+#   push:
+#     branches: [main]
+#   pull_request:
+#     branches: [main]
+#   workflow_dispatch:
+
+# jobs:
+#   build:
+#     strategy:
+#       matrix:
+#         os: [ubuntu-latest]
+#         node-version: [22]
+#     name: 🏗️ Build
+#     runs-on: ${{ matrix.os }}
+#     steps:
+#       - name: 🔔 Checkout
+#         uses: actions/checkout@v4
+#       - name: 📦 Setup Node
+#         uses: actions/setup-node@v4
+#         with:
+#           node-version: ${{ matrix.node-version }}
+#       - name: 🍞 Setup Bun
+#         uses: oven-sh/setup-bun@v1
+#       - name: 🌵 Cache bun
+#         uses: actions/cache@v4
+#         id: cache-bun
+#         with:
+#           path: ~/.bun
+#           key: ${{ runner.os }}-bun-${{ matrix.node-version }}-${{ hashFiles('**/bun.lockb') }}
+#           restore-keys: |
+#             ${{ runner.os }}-bun-${{ matrix.node-version }}-
+#             ${{ runner.os }}-bun-
+#             ${{ runner.os }}-
+#       - name: 🔽 Install Dependencies
+#         run: bun install
+#       - name: 👷‍♂️ Build
+#         run: bun build
+#       - name: 🚛 Upload Build Artifact
+#         uses: actions/upload-artifact@v4
+#         with:
+#           path: dist
+
+#   release:
+#     strategy:
+#       matrix:
+#         os: [ubuntu-latest]
+#         node-version: [22]
+#     if: ${{ github.ref == 'refs/heads/main' && !contains(github.event.head_commit.message, '[skip ci]') }}
+#     needs: build
+#     name: 🚀 Release
+#     permissions:
+#       contents: write
+#       pull-requests: write
+#     runs-on: ${{ matrix.os }}
+#     steps:
+#       - name: 💤 Automated Release
+#         uses: googleapis/release-please-action@v4
+#         id: release
+#         with:
+#           token: ${{ secrets.GITHUB_TOKEN }}
+#           release-type: node
+#       - name: 🔔 Checkout
+#         uses: actions/checkout@v4
+#       - name: 📦 Setup Node
+#         uses: actions/setup-node@v4
+#         with:
+#           node-version: ${{ matrix.node-version }}
+#       - name: 🍞 Setup Bun
+#         uses: oven-sh/setup-bun@v1
+#       - name: 🌵 Cache bun
+#         uses: actions/cache@v4
+#         id: cache-bun
+#         with:
+#           path: ~/.bun
+#           key: ${{ runner.os }}-bun-${{ matrix.node-version }}-${{ hashFiles('**/bun.lockb') }}
+#           restore-keys: |
+#             ${{ runner.os }}-bun-${{ matrix.node-version }}-
+#             ${{ runner.os }}-bun-
+#             ${{ runner.os }}-
+#       - name: 🔽 Install Dependencies
+#         run: bun install
+#       - name: 🏷️ Tag stable versions
+#         if: ${{ steps.release.outputs.release_created }}
+#         run: |
+#           git config user.name github-actions[bot]
+#           git config user.email github-actions[bot]@users.noreply.github.com
+#           git remote add gh-token "https://${{ secrets.GITHUB_TOKEN }}@github.com/google-github-actions/release-please-action.git"
+#           git tag -d stable || true
+#           git push origin :stable || true
+#           git tag -a stable -m "chore: release stable version ${{ steps.release.outputs.tag_name }}"
+#       - name: 🚚 Download Build Artifact
+#         if: ${{ steps.release.outputs.release_created }}
+#         uses: actions/download-artifact@v4
+#         with:
+#           name: dist
+#       - name: 🚛 Upload Release Artifact
+#         if: ${{ steps.release.outputs.release_created }}
+#         run: gh release upload ${{ steps.release.outputs.tag_name }} dist/*
+#         env:
+#           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

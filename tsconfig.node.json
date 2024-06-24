@@ -6,5 +6,5 @@
     "module": "ESNext",
     "moduleResolution": "bundler"
   },
-  "include": ["vite.config.ts", "src/manifest.config.ts", "package.json"]
+  "include": ["vite.config.ts", "manifest.config.ts", "package.json"]
 }

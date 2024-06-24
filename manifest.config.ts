@@ -1,15 +1,20 @@
 import { defineManifest } from '@crxjs/vite-plugin'
-import packageJson from '../package.json'
+import packageJson from './package.json'
 
-const { version, name, description } = packageJson
+const { version, description } = packageJson
 
-const [major, minor, patch] = version.replace(/[^\d.-]+/g, '').split(/[.-]/)
+const [major, minor, patch, label = '0'] = version
+  .replace(/[^\d.-]+/g, '')
+  .split(/[.-]/)
 
 export default defineManifest(async env => ({
   manifest_version: 3,
-  name: name,
-  description: description,
-  version: `${major}.${minor}.${patch}`,
+  name:
+    env.mode === 'staging'
+      ? '[INTERNAL] CRXJS Power Tools'
+      : 'CRXJS Power Tools',
+  description,
+  version: `${major}.${minor}.${patch}.${label}`,
   version_name: version,
   icons: {
     '128': 'src/assets/icons/icon-128.png'
