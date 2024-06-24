@@ -11,11 +11,5 @@ export default defineConfig({
     hmr: {
       clientPort: 5173
     }
-  },
-  build: {
-    target: 'modules',
-    outDir: 'dist',
-    emptyOutDir: true
-  },
-  assetsInclude: 'src/**/*'
+  }
 })
