@@ -5,6 +5,7 @@
   import { downloadBlob } from '../utils/StudentHelper'
   import Head from '../components/Head.svelte'
   import ScheduleTable from '../components/ScheduleTable.svelte'
+  import ThemeToggle from '../components/ThemeToggle.svelte'
 
   export let schedule: Array<ScheduleI>
   export let information: InformationI
@@ -37,8 +38,13 @@
   }
 </script>
 
-<main class="min-h-screen p-4 flex flex-col justify-between bg-gray-100">
-  <div bind:this={captureScreen} class="bg-white p-3 shadow-lg rounded-lg">
+<main
+  class="min-h-screen p-4 flex flex-col justify-between bg-gray-100 dark:bg-gray-900"
+>
+  <div
+    bind:this={captureScreen}
+    class="bg-white dark:bg-gray-800 p-3 shadow-lg rounded-lg"
+  >
     <Head {information} />
     <div class="my-5">
       <ScheduleTable {schedule} />
@@ -66,13 +72,18 @@
         <Icon icon="mdi:github" class="mr-2" /> Contribute
       </button>
     </div>
-    <div class="text-center md:text-right text-xs md:text-sm text-orange-500">
+    <div
+      class="text-center md:text-right text-xs md:text-sm text-orange-500 dark:text-orange-400"
+    >
       <p>
         Redesign by PunGrumpy <Icon
           icon="ph:ghost-fill"
-          class="inline-block text-orange-500"
+          class="inline-block text-orange-500 dark:text-orange-400"
         />
       </p>
     </div>
   </footer>
+  <div class="fixed bottom-4 right-4">
+    <ThemeToggle />
+  </div>
 </main>

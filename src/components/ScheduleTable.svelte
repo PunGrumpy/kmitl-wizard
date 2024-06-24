@@ -20,13 +20,17 @@
 </script>
 
 <div class="overflow-x-auto">
-  <table class="min-w-full bg-white rounded-2xl">
-    <thead class="bg-gray-100">
+  <table class="min-w-full bg-white dark:bg-gray-800 rounded-2xl">
+    <thead class="bg-gray-100 dark:bg-gray-900">
       <tr>
         <th scope="col" class="p-2" />
         {#each hours as hour (hour)}
           {#if hour < 20 - 1}
-            <th scope="col" class="border-x border-gray-200 p-2" colspan="4">
+            <th
+              scope="col"
+              class="border-x border-gray-200 dark:border-gray-700 p-2"
+              colspan="4"
+            >
               {`${formatTime(hour)} - ${formatTime(hour + 1)}`}
             </th>
           {/if}
@@ -35,16 +39,20 @@
     </thead>
     <tbody>
       {#each days as day, i (day.name)}
-        <tr class="{i % 2 === 0 ? 'bg-gray-50' : 'bg-white'} hover:bg-gray-100">
+        <tr
+          class="{i % 2 === 0
+            ? 'bg-gray-50 dark:bg-gray-700'
+            : 'bg-white dark:bg-gray-800'} hover:bg-gray-100 dark:hover:bg-gray-600"
+        >
           <th
             scope="row"
-            class="text-right font-semibold text-xs md:text-sm p-2"
+            class="text-right font-semibold text-xs md:text-sm p-2 text-orange-400 dark:text-orange-300"
           >
             {day.name}
           </th>
           {#each createTimeSlot(schedule, day.code) as slot}
             <td
-              class="border-x border-gray-200 p-2"
+              class="border-x border-gray-200 dark:border-gray-700 p-2"
               colspan={slot?.colSpan || 1}
             >
               {#if slot}
@@ -57,16 +65,3 @@
     </tbody>
   </table>
 </div>
-
-<style scoped>
-  th,
-  td {
-    @apply font-mplus;
-  }
-  th {
-    @apply font-normal whitespace-nowrap text-orange-400;
-  }
-  td {
-    @apply w-[2.22%] p-1 h-28;
-  }
-</style>

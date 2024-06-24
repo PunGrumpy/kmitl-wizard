@@ -1,3 +1,14 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+th,
+td {
+  @apply font-mplus;
+}
+th {
+  @apply font-normal whitespace-nowrap text-orange-400;
+}
+td {
+  @apply w-[2.22%] p-1 h-28;
+}

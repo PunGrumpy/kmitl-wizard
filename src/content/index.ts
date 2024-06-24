@@ -7,6 +7,8 @@ const font = document.createElement('style')
 font.innerHTML = "@import url('https://use.typekit.net/atg0zvr.css');"
 document.head.appendChild(font)
 
+document.documentElement.classList.add('dark')
+
 const scheduleTable = document.querySelector('table') as HTMLTableElement
 document.body.innerHTML = ''
 
