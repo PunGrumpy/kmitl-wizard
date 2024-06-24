@@ -70,7 +70,7 @@ jobs:
         uses: actions/download-artifact@v4
         with:
           name: kmitl-wizard
-          path: dist/
+          path: output/
       - name: 🏷️ Tag stable versions
         if: ${{ steps.release.outputs.release_created }}
         run: |
@@ -82,6 +82,6 @@ jobs:
           git tag -a stable -m "chore: release stable version ${{ steps.release.outputs.tag_name }}"
       - name: 🚛 Upload Release Artifact
         if: ${{ steps.release.outputs.release_created }}
-        run: gh release upload ${{ steps.release.outputs.tag_name }} dist/*
+        run: gh release upload ${{ steps.release.outputs.tag_name }} output/*
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
