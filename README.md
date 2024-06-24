@@ -47,11 +47,9 @@ This will compile the files into the `/dist` directory.
 To load the extension into Chrome, follow these steps:
 
 1. Open the Extension Management page by navigating to `chrome://extensions`.
-2. Enable Developer Mode by clicking the toggle switch next to "Developer mode".
-3. Click the "LOAD UNPACKED" button and select the `/dist` directory.
+2. Enable Developer Mode by clicking the toggle switch next to **"Developer mode"**.
+3. Click the **"LOAD UNPACKED"** button and select the `/dist` directory.
 4. For easier development, install the [Extensions Reloader](https://chromewebstore.google.com/detail/extensions-reloader/fimgfedafeadlieiabdeeaodndnlbhid) for automatic updates to `/dist`.
-
-![Example](https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSdhNvG6Ym52pOabzOI9GfvodQiRqQ45vodtg&s)
 
 ## 🤝 Contribute
 
