@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.2.0](https://github.com/PunGrumpy/kmitl-wizard/compare/v1.1.0...v1.2.0) (2024-06-24)
+
+
+### Features
+
+* enhance for cohesive design and improve layout ([7353034](https://github.com/PunGrumpy/kmitl-wizard/commit/735303495f050c8335458670775c7501c2d691ce))
+
 ## [1.1.0](https://github.com/PunGrumpy/kmitl-wizard/compare/v1.0.0...v1.1.0) (2024-06-24)
 
 
