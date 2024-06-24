@@ -28,7 +28,7 @@
           {#if hour < 20 - 1}
             <th
               scope="col"
-              class="border-x border-gray-200 dark:border-gray-700 p-2"
+              class="border-x border-gray-200 dark:border-gray-700 p-2 text-xs md:text-sm"
               colspan="4"
             >
               {`${formatTime(hour)} - ${formatTime(hour + 1)}`}

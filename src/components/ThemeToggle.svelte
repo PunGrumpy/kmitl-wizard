@@ -1,10 +1,11 @@
 <script lang="ts">
+  import Icon from '@iconify/svelte'
   import { onMount } from 'svelte'
 
-  let theme = 'system'
+  let theme = 'dark'
 
   onMount(() => {
-    theme = localStorage.getItem('theme') || 'system'
+    theme = localStorage.getItem('theme') || 'dark'
     applyTheme(theme)
   })
 
@@ -12,38 +13,33 @@
     const root = document.documentElement
     root.classList.remove('light', 'dark')
 
-    if (theme === 'system') {
-      const prefersDark = window.matchMedia(
-        '(prefers-color-scheme: dark)'
-      ).matches
-      root.classList.add(prefersDark ? 'dark' : 'light')
+    if (theme === 'light') {
+      root.classList.add('light')
     } else {
-      root.classList.add(theme)
+      root.classList.add('dark')
     }
 
     localStorage.setItem('theme', theme)
   }
 
-  function handleThemeChange(event: Event) {
-    if (event.target instanceof HTMLSelectElement) {
-      theme = event.target.value
-    }
-    applyTheme(theme)
+  function toggleTheme() {
+    const newTheme = theme === 'light' ? 'dark' : 'light'
+    theme = newTheme
+    applyTheme(newTheme)
   }
 </script>
 
-<div>
-  <label for="theme-toggle" class="text-xs md:text-sm text-orange-500"
-    >Theme:
-  </label>
-  <select
-    id="theme-toggle"
-    on:change={handleThemeChange}
-    bind:value={theme}
-    class="border rounded px-2 py-1"
+<div
+  class="rounded-lg py-2 px-4 bg-orange-500 text-white text-xs md:text-sm hover:bg-orange-600 transition-colors flex items-center"
+>
+  <button
+    on:click={toggleTheme}
+    class="rounded-lg bg-orange-500 text-white text-xs md:text-sm hover:bg-orange-600 transition-colors flex items-center"
   >
-    <option value="system">System</option>
-    <option value="light">Light</option>
-    <option value="dark">Dark</option>
-  </select>
+    <Icon
+      icon={theme === 'light' ? 'ph:moon-stars-fill' : 'ph:sun-fill'}
+      class="mr-2"
+    />
+    {theme === 'light' ? 'Dark Mode' : 'Light Mode'}
+  </button>
 </div>

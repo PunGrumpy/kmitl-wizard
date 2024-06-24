@@ -15,11 +15,7 @@
   const screenshotToClipboard = async () => {
     const blob = await toBlob(captureScreen)
     if (blob == null) return
-    navigator.clipboard.write([
-      new ClipboardItem({
-        'image/png': blob
-      })
-    ])
+    navigator.clipboard.write([new ClipboardItem({ 'image/png': blob })])
   }
 
   const exportPng = async () => {
@@ -50,8 +46,10 @@
       <ScheduleTable {schedule} />
     </div>
   </div>
-  <footer class="flex flex-col md:flex-row justify-between items-center mt-4">
-    <div class="flex space-x-3 mb-2 md:mb-0">
+  <footer
+    class="flex flex-col md:flex-row justify-between items-center mt-4 space-y-2 md:space-y-0 md:space-x-4"
+  >
+    <div class="flex space-x-3">
       <button
         on:click={screenshotToClipboard}
         class="rounded-lg py-2 px-4 bg-orange-500 text-white text-xs md:text-sm hover:bg-orange-600 transition-colors flex items-center"
@@ -71,6 +69,7 @@
       >
         <Icon icon="mdi:github" class="mr-2" /> Contribute
       </button>
+      <ThemeToggle />
     </div>
     <div
       class="text-center md:text-right text-xs md:text-sm text-orange-500 dark:text-orange-400"
@@ -83,7 +82,4 @@
       </p>
     </div>
   </footer>
-  <div class="fixed bottom-4 right-4">
-    <ThemeToggle />
-  </div>
 </main>
