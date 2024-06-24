@@ -1,10 +1,10 @@
 <script lang="ts">
-  import type { InformationI, ScheduleI } from '../libs/utils/StudentScraping'
+  import type { InformationI, ScheduleI } from '../utils/StudentScraping'
   import Icon from '@iconify/svelte'
   import { toBlob } from 'html-to-image'
-  import { downloadBlob } from '../libs/utils/StudentHelper'
-  import Head from '../libs/components/scheduleTable/Head.svelte'
-  import ScheduleTable from '../libs/components/scheduleTable/ScheduleTable.svelte'
+  import { downloadBlob } from '../utils/StudentHelper'
+  import Head from '../components/Head.svelte'
+  import ScheduleTable from '../components/ScheduleTable.svelte'
 
   export let schedule: Array<ScheduleI>
   export let information: InformationI

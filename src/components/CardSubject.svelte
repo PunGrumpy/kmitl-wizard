@@ -1,5 +1,5 @@
 <script lang="ts">
-  import type { ScheduleI } from '../../utils/StudentScraping'
+  import type { ScheduleI } from '../utils/StudentScraping'
   export let subject: ScheduleI
 
   const getSectionType = () =>
