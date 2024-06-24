@@ -1,7 +1,7 @@
 import { defineManifest } from '@crxjs/vite-plugin'
 import packageJson from '../package.json'
 
-const { name, version, description } = packageJson
+const { name, description, author, version, homepage } = packageJson
 
 const [major, minor, patch, label = '0'] = version
   .replace(/[^\d.-]+/g, '')
@@ -11,7 +11,9 @@ export default defineManifest(() => ({
   manifest_version: 3,
   name,
   description,
-  version: `${major}.${minor}.${patch}.${label !== '0' ? label : ''}`,
+  author: author.name,
+  homepage_url: homepage,
+  version: `${major}.${minor}.${patch}.${label}`,
   version_name: version,
   icons: {
     '16': 'src/assets/icons/icon-16.png',
