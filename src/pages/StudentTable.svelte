@@ -64,7 +64,7 @@
       </button>
       <button
         on:click={() =>
-          (window.location.href = 'https://github.com/PunGrumpy/kmitl-x')}
+          (window.location.href = 'https://github.com/PunGrumpy/kmitl-wizard')}
         class="rounded-lg py-2 px-4 bg-orange-600 text-white text-xs hover:bg-orange-700 transition-colors flex items-center"
       >
         <Icon icon="mdi:github" class="mr-2" /> Contribute
