@@ -36,7 +36,10 @@
     <tbody>
       {#each days as day, i (day.name)}
         <tr class="{i % 2 === 0 ? 'bg-gray-50' : 'bg-white'} hover:bg-gray-100">
-          <th scope="row" class="text-right font-semibold text-sm p-2">
+          <th
+            scope="row"
+            class="text-right font-semibold text-xs md:text-sm p-2"
+          >
             {day.name}
           </th>
           {#each createTimeSlot(schedule, day.code) as slot}

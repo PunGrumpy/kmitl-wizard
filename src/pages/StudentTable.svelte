@@ -27,30 +27,29 @@
       <ScheduleTable {schedule} />
     </div>
   </div>
-  <footer class="flex justify-between items-center mt-4">
-    <div class="flex space-x-3">
+  <footer class="flex flex-col md:flex-row justify-between items-center mt-4">
+    <div class="flex space-x-3 mb-2 md:mb-0">
       <button
         on:click={exportPng}
-        class="rounded-lg py-2 px-4 bg-orange-500 text-white text-sm hover:bg-orange-600 transition-colors flex items-center"
+        class="rounded-lg py-2 px-4 bg-orange-500 text-white text-xs md:text-sm hover:bg-orange-600 transition-colors flex items-center"
       >
         <Icon icon="ph:file-png-light" class="mr-2" /> Export
       </button>
       <button
         on:click={() =>
-          (window.location.href = 'https://github.com/BossNz/kmitl-x')}
-        class="rounded-lg py-2 px-4 bg-orange-500 text-white text-sm hover:bg-orange-600 transition-colors flex items-center"
+          (window.location.href = 'https://github.com/PunGrumpy/kmitl-x')}
+        class="rounded-lg py-2 px-4 bg-orange-500 text-white text-xs md:text-sm hover:bg-orange-600 transition-colors flex items-center"
       >
         <Icon icon="mdi:github" class="mr-2" /> Contribute
       </button>
     </div>
-    <div class="text-right text-sm text-orange-500">
+    <div class="text-center md:text-right text-xs md:text-sm text-orange-500">
       <p>
-        Redesign by BossNz <Icon
-          icon="fluent-emoji:love-you-gesture"
-          class="inline"
+        Redesign by PunGrumpy <Icon
+          icon="mdi:heart"
+          class="inline-block text-orange-500"
         />
       </p>
-      <p>Powered by Computer Science, KMITL</p>
     </div>
   </footer>
 </main>
