@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.2.1](https://github.com/PunGrumpy/kmitl-wizard/compare/v1.2.0...v1.2.1) (2024-06-24)
+
+
+### Bug Fixes
+
+* **footer:** wrong url ([8e763c7](https://github.com/PunGrumpy/kmitl-wizard/commit/8e763c77bedad41e34f33e4d9fc6efd1ab941b99))
+
 ## [1.2.0](https://github.com/PunGrumpy/kmitl-wizard/compare/v1.1.0...v1.2.0) (2024-06-24)
 
 
