@@ -41,7 +41,8 @@ jobs:
       - name: 🚛 Upload Build Artifact
         uses: actions/upload-artifact@v4
         with:
-          path: dist
+          name: kmitl-x
+          path: dist/*
 
   release:
     strategy:
@@ -62,26 +63,12 @@ jobs:
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
           release-type: node
-      - name: 🔔 Checkout
-        uses: actions/checkout@v4
-      - name: 📦 Setup Node
-        uses: actions/setup-node@v4
+      - name: 🚚 Download Build Artifact
+        if: ${{ steps.release.outputs.release_created }}
+        uses: actions/download-artifact@v4
         with:
-          node-version: ${{ matrix.node-version }}
-      - name: 🍞 Setup Bun
-        uses: oven-sh/setup-bun@v1
-      - name: 🌵 Cache bun
-        uses: actions/cache@v4
-        id: cache-bun
-        with:
-          path: ~/.bun
-          key: ${{ runner.os }}-bun-${{ matrix.node-version }}-${{ hashFiles('**/bun.lockb') }}
-          restore-keys: |
-            ${{ runner.os }}-bun-${{ matrix.node-version }}-
-            ${{ runner.os }}-bun-
-            ${{ runner.os }}-
-      - name: 🔽 Install Dependencies
-        run: bun install
+          name: kmitl-x
+          path: dist/
       - name: 🏷️ Tag stable versions
         if: ${{ steps.release.outputs.release_created }}
         run: |
@@ -91,11 +78,6 @@ jobs:
           git tag -d stable || true
           git push origin :stable || true
           git tag -a stable -m "chore: release stable version ${{ steps.release.outputs.tag_name }}"
-      - name: 🚚 Download Build Artifact
-        if: ${{ steps.release.outputs.release_created }}
-        uses: actions/download-artifact@v4
-        with:
-          name: dist
       - name: 🚛 Upload Release Artifact
         if: ${{ steps.release.outputs.release_created }}
         run: gh release upload ${{ steps.release.outputs.tag_name }} dist/*
