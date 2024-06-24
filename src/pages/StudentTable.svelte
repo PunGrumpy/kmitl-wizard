@@ -9,13 +9,30 @@
   export let schedule: Array<ScheduleI>
   export let information: InformationI
 
-  let captureScreen: any
+  let captureScreen: HTMLDivElement
+
+  const screenshotToClipboard = async () => {
+    const blob = await toBlob(captureScreen)
+    if (blob == null) return
+    navigator.clipboard.write([
+      new ClipboardItem({
+        'image/png': blob
+      })
+    ])
+  }
+
   const exportPng = async () => {
     const blob = await toBlob(captureScreen)
     if (blob == null) return
+    const data = {
+      studentID: information.studentID,
+      semester: information.Semester,
+      year: information.year,
+      schedule: schedule
+    }
     downloadBlob(
       blob,
-      `schedule_${information.studentID}_${information.Semester}_${information.year}.png`
+      `schedule_${data.studentID}_${data.semester}_${data.year}.png`
     )
   }
 </script>
@@ -29,6 +46,12 @@
   </div>
   <footer class="flex flex-col md:flex-row justify-between items-center mt-4">
     <div class="flex space-x-3 mb-2 md:mb-0">
+      <button
+        on:click={screenshotToClipboard}
+        class="rounded-lg py-2 px-4 bg-orange-500 text-white text-xs md:text-sm hover:bg-orange-600 transition-colors flex items-center"
+      >
+        <Icon icon="ph:clipboard-light" class="mr-2" /> Copy to Clipboard
+      </button>
       <button
         on:click={exportPng}
         class="rounded-lg py-2 px-4 bg-orange-500 text-white text-xs md:text-sm hover:bg-orange-600 transition-colors flex items-center"
@@ -46,7 +69,7 @@
     <div class="text-center md:text-right text-xs md:text-sm text-orange-500">
       <p>
         Redesign by PunGrumpy <Icon
-          icon="mdi:heart"
+          icon="ph:ghost-fill"
           class="inline-block text-orange-500"
         />
       </p>
