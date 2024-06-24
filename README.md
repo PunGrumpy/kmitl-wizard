@@ -28,6 +28,7 @@ To get started with development, follow these steps:
    ```
 
 2. **Start development server with HMR (Hot Module Replacement):**
+
    ```bash
    bun dev
    ```
@@ -37,7 +38,7 @@ To get started with development, follow these steps:
 To create a production build, run:
 
 ```bash
-bun build
+bun run build
 ```
 
 This will compile the files into the `/dist` directory.
