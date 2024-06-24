@@ -37,7 +37,7 @@ jobs:
       - name: 🔽 Install Dependencies
         run: bun install
       - name: 👷‍♂️ Build
-        run: bun build
+        run: bun run build
       - name: 🚛 Upload Build Artifact
         uses: actions/upload-artifact@v4
         with:
