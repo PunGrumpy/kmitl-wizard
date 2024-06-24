@@ -1,25 +1,25 @@
-import { defineManifest } from "@crxjs/vite-plugin";
-import packageJson from "../package.json";
+import { defineManifest } from '@crxjs/vite-plugin'
+import packageJson from '../package.json'
 
-const { version, name, description } = packageJson;
+const { version, name, description } = packageJson
 
-const [major, minor, patch] = version.replace(/[^\d.-]+/g, "").split(/[.-]/);
+const [major, minor, patch] = version.replace(/[^\d.-]+/g, '').split(/[.-]/)
 
-export default defineManifest(async (env) => ({
+export default defineManifest(async env => ({
   manifest_version: 3,
   name: name,
   description: description,
   version: `${major}.${minor}.${patch}`,
   version_name: version,
   icons: {
-    "128": "src/assets/icons/icon-128.png",
+    '128': 'src/assets/icons/icon-128.png'
   },
   content_scripts: [
     {
       matches: [
-        "https://*.reg.kmitl.ac.th/u_student/report_studytable_show.php",
+        'https://*.reg.kmitl.ac.th/u_student/report_studytable_show.php'
       ],
-      js: ["src/content/index.ts"],
-    },
-  ],
-}));
+      js: ['src/content/index.ts']
+    }
+  ]
+}))
