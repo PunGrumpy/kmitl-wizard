@@ -1,5 +1,5 @@
 <div align="center">
-    <h1>📦 KMITLX Extension Chrome</h1>
+    <h1>🧙‍♂️ KMITL Wizard Extension Chrome</h1>
     <p>
         <sub>A schedule table extension for KMITL students</sub>
     </p>
@@ -9,6 +9,14 @@
 </div>
 
 ## 🔮 Features
+
+- [x] Display schedule table
+- [x] Display address of the classroom
+- [x] Display time of the class
+- [x] Download schedule table as an image
+- [x] Copy schedule table to clipboard
+
+## 🧑‍💻 Stacks
 
 - [Svelte](https://svelte.dev/)
 - [TypeScript](https://www.typescriptlang.org/)
@@ -66,4 +74,8 @@ This project is inspired by:
 
 - [Svelte Typescript Chrome Extension Boilerplate](https://github.com/NekitCorp/chrome-extension-svelte-typescript-boilerplate)
 - [KMITL +](https://github.com/t0ngk/KMITL-PLUS)
-- [BossNz](https://github.com/BossNz)
+- [KMITL X](https://github.com/BossNz/kmitl-x)
+
+## 📄 License
+
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
