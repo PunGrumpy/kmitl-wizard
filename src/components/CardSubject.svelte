@@ -8,19 +8,17 @@
 </script>
 
 <div
-  class="bg-white dark:bg-gray-800 shadow-md rounded-lg p-4 hover:shadow-lg transition-shadow flex flex-col justify-between h-full"
+  class="bg-zinc-50 dark:bg-zinc-800 shadow-md rounded-lg p-4 transition-shadow flex flex-col justify-between h-full"
 >
-  <div
-    class="flex justify-between text-sm md:text-md text-gray-500 dark:text-gray-400"
-  >
+  <div class="flex justify-between text-xs text-zinc-600 dark:text-zinc-400">
     <p>{subject.time.type}</p>
     <p class="whitespace-nowrap">{subject.time.start} - {subject.time.end}</p>
   </div>
-  <h3 class="text-orange-500 font-bold text-lg dark:text-orange-400 mt-2">
+  <h3 class="text-orange-600 font-semibold text-lg dark:text-orange-400 mt-2">
     {subject.name}
   </h3>
   <div
-    class="flex justify-between text-sm md:text-md text-gray-700 dark:text-gray-300 mt-2"
+    class="flex justify-between text-xs text-zinc-800 dark:text-zinc-300 mt-2"
   >
     <p class="whitespace-nowrap">Section ({getSectionType()})</p>
     <p class="whitespace-nowrap">{subject.building} {displayRoom()}</p>

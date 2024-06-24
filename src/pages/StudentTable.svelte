@@ -35,49 +35,49 @@
 </script>
 
 <main
-  class="min-h-screen p-4 flex flex-col justify-between bg-gray-100 dark:bg-gray-900"
+  class="min-h-screen p-6 flex flex-col justify-between bg-zinc-100 dark:bg-zinc-900"
 >
   <div
     bind:this={captureScreen}
-    class="bg-white dark:bg-gray-800 p-3 shadow-lg rounded-lg"
+    class="bg-white dark:bg-zinc-800 p-4 shadow-lg rounded-lg"
   >
     <Head {information} />
-    <div class="my-5">
+    <div class="my-4">
       <ScheduleTable {schedule} />
     </div>
   </div>
   <footer
-    class="flex flex-col md:flex-row justify-between items-center mt-4 space-y-2 md:space-y-0 md:space-x-4"
+    class="flex flex-col md:flex-row justify-between items-center mt-6 space-y-3 md:space-y-0 md:space-x-6"
   >
-    <div class="flex space-x-3">
+    <div class="flex space-x-4">
       <button
         on:click={screenshotToClipboard}
-        class="rounded-lg py-2 px-4 bg-orange-500 text-white text-xs md:text-sm hover:bg-orange-600 transition-colors flex items-center"
+        class="rounded-lg py-2 px-4 bg-orange-600 text-white text-xs hover:bg-orange-700 transition-colors flex items-center"
       >
         <Icon icon="ph:clipboard-light" class="mr-2" /> Copy to Clipboard
       </button>
       <button
         on:click={exportPng}
-        class="rounded-lg py-2 px-4 bg-orange-500 text-white text-xs md:text-sm hover:bg-orange-600 transition-colors flex items-center"
+        class="rounded-lg py-2 px-4 bg-orange-600 text-white text-xs hover:bg-orange-700 transition-colors flex items-center"
       >
         <Icon icon="ph:file-png-light" class="mr-2" /> Export
       </button>
       <button
         on:click={() =>
           (window.location.href = 'https://github.com/PunGrumpy/kmitl-x')}
-        class="rounded-lg py-2 px-4 bg-orange-500 text-white text-xs md:text-sm hover:bg-orange-600 transition-colors flex items-center"
+        class="rounded-lg py-2 px-4 bg-orange-600 text-white text-xs hover:bg-orange-700 transition-colors flex items-center"
       >
         <Icon icon="mdi:github" class="mr-2" /> Contribute
       </button>
       <ThemeToggle />
     </div>
     <div
-      class="text-center md:text-right text-xs md:text-sm text-orange-500 dark:text-orange-400"
+      class="text-center md:text-right text-xs text-orange-600 dark:text-orange-400"
     >
       <p>
         Redesign by PunGrumpy <Icon
           icon="ph:ghost-fill"
-          class="inline-block text-orange-500 dark:text-orange-400"
+          class="inline-block text-orange-600 dark:text-orange-400"
         />
       </p>
     </div>

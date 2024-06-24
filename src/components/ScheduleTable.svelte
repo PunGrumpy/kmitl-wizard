@@ -20,15 +20,15 @@
 </script>
 
 <div class="overflow-x-auto">
-  <table class="min-w-full bg-white dark:bg-gray-800 rounded-2xl">
-    <thead class="bg-gray-100 dark:bg-gray-900">
+  <table class="min-w-full bg-zinc-50 dark:bg-zinc-800 rounded-lg">
+    <thead class="bg-zinc-200 dark:bg-zinc-900">
       <tr>
         <th scope="col" class="p-2" />
         {#each hours as hour (hour)}
           {#if hour < 20 - 1}
             <th
               scope="col"
-              class="border-x border-gray-200 dark:border-gray-700 p-2 text-xs md:text-sm"
+              class="border-x border-zinc-300 dark:border-zinc-600 p-2 text-xs"
               colspan="4"
             >
               {`${formatTime(hour)} - ${formatTime(hour + 1)}`}
@@ -41,18 +41,18 @@
       {#each days as day, i (day.name)}
         <tr
           class="{i % 2 === 0
-            ? 'bg-gray-50 dark:bg-gray-700'
-            : 'bg-white dark:bg-gray-800'} hover:bg-gray-100 dark:hover:bg-gray-600"
+            ? 'bg-zinc-50 dark:bg-zinc-700'
+            : 'bg-white dark:bg-zinc-800'} hover:bg-zinc-100 dark:hover:bg-zinc-600"
         >
           <th
             scope="row"
-            class="text-right font-semibold text-xs md:text-sm p-2 text-orange-400 dark:text-orange-300"
+            class="text-right font-semibold text-xs p-2 text-orange-600 dark:text-orange-400"
           >
             {day.name}
           </th>
           {#each createTimeSlot(schedule, day.code) as slot}
             <td
-              class="border-x border-gray-200 dark:border-gray-700 p-2"
+              class="border-x border-zinc-300 dark:border-zinc-600 p-2"
               colspan={slot?.colSpan || 1}
             >
               {#if slot}

@@ -30,11 +30,11 @@
 </script>
 
 <div
-  class="rounded-lg py-2 px-4 bg-orange-500 text-white text-xs md:text-sm hover:bg-orange-600 transition-colors flex items-center"
+  class="rounded-lg py-2 px-4 bg-orange-600 text-white text-xs hover:bg-orange-700 transition-colors flex items-center"
 >
   <button
     on:click={toggleTheme}
-    class="rounded-lg bg-orange-500 text-white text-xs md:text-sm hover:bg-orange-600 transition-colors flex items-center"
+    class="rounded-lg bg-orange-600 text-white text-xs hover:bg-orange-700 transition-colors flex items-center"
   >
     <Icon
       icon={theme === 'light' ? 'ph:moon-stars-fill' : 'ph:sun-fill'}
