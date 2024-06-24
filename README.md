@@ -1,7 +1,7 @@
 <div align="center">
     <h1>📦 KMITLX Extension Chrome</h1>
     <p>
-        <sub>Schedule table extension for student kmitl</sub>
+        <sub>A schedule table extension for KMITL students</sub>
     </p>
     <p>
         <img src=".github/images/preview.png" alt="Preview" width="100%" style="border-radius: 5px;">
@@ -19,41 +19,52 @@
 
 ## 🚜 Development
 
-```bash
-# install dependencies
-yarn install
+To get started with development, follow these steps:
 
-# build files to `/dist` directory
-# HMR for extension pages and content scripts
-yarn dev
-```
+1. **Install dependencies:**
+
+   ```bash
+   bun install
+   ```
+
+2. **Start development server with HMR (Hot Module Replacement):**
+   ```bash
+   bun dev
+   ```
 
 ## ⚙️ Build
 
+To create a production build, run:
+
 ```bash
-# build files to `/dist` directory
-$ yarn build
+bun build
 ```
 
-## 📦 Load unpacked extensions
+This will compile the files into the `/dist` directory.
 
-[Getting Started Tutorial](https://developer.chrome.com/docs/extensions/mv3/getstarted/)
+## 📦 Load Unpacked Extensions
+
+To load the extension into Chrome, follow these steps:
 
 1. Open the Extension Management page by navigating to `chrome://extensions`.
-2. Enable Developer Mode by clicking the toggle switch next to `Developer mode`.
-3. Click the `LOAD UNPACKED` button and select the `/dist` directory.
-4. Install [Extensions Reloader](https://chromewebstore.google.com/detail/extensions-reloader/fimgfedafeadlieiabdeeaodndnlbhid) for auto update `/dist` to easy develop.
+2. Enable Developer Mode by clicking the toggle switch next to "Developer mode".
+3. Click the "LOAD UNPACKED" button and select the `/dist` directory.
+4. For easier development, install the [Extensions Reloader](https://chromewebstore.google.com/detail/extensions-reloader/fimgfedafeadlieiabdeeaodndnlbhid) for automatic updates to `/dist`.
 
-![Example](https://wd.imgix.net/image/BhuKGJaIeLNPW9ehns59NfwqKxF2/vOu7iPbaapkALed96rzN.png?auto=format&w=571)
+![Example](https://developer.chrome.com/static/docs/extensions/get-started/tutorial/hello-world/image/reload-extension-241cc5378fffb.png)
 
 ## 🤝 Contribute
 
-we invite you to contribute kmitlx
+We invite you to contribute to KMITLX! Here’s how you can help:
 
-- you can open pull request to this repo we will review your code and approve 😎
+- Open a pull request. We will review your code and approve it if it meets our standards. 😎
+- Report a bug by opening an issue. 🐛
+- Add a new feature by opening an issue. 💡
 
-## 🫡 credit
+## 🫡 Credits
 
-> [Svelte Typescript Chrome Extension Boilerplate](https://github.com/NekitCorp/chrome-extension-svelte-typescript-boilerplate)
+This project is inspired by:
 
-> [KMITL +](https://github.com/t0ngk/KMITL-PLUS)
+- [Svelte Typescript Chrome Extension Boilerplate](https://github.com/NekitCorp/chrome-extension-svelte-typescript-boilerplate)
+- [KMITL +](https://github.com/t0ngk/KMITL-PLUS)
+- [BossNz](https://github.com/BossNz)
