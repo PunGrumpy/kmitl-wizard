@@ -51,7 +51,7 @@ To load the extension into Chrome, follow these steps:
 3. Click the "LOAD UNPACKED" button and select the `/dist` directory.
 4. For easier development, install the [Extensions Reloader](https://chromewebstore.google.com/detail/extensions-reloader/fimgfedafeadlieiabdeeaodndnlbhid) for automatic updates to `/dist`.
 
-![Example](https://developer.chrome.com/static/docs/extensions/get-started/tutorial/hello-world/image/reload-extension-241cc5378fffb.png)
+![Example](https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSdhNvG6Ym52pOabzOI9GfvodQiRqQ45vodtg&s)
 
 ## 🤝 Contribute
 
