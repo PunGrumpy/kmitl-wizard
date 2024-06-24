@@ -1,6 +1,11 @@
 {
   "name": "kmitl-wizard",
   "description": "🧙‍♂️ KMITL Schedule Table Extension",
+  "author": {
+    "name": "PunGrumpy",
+    "url": "https://pungrumpy.com"
+  },
+  "homepage": "https://github.com/PunGrumpy/kmitl-wizard",
   "version": "1.0.0",
   "license": "MIT",
   "type": "module",
