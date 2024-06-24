@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.1.0](https://github.com/PunGrumpy/kmitl-wizard/compare/v1.0.0...v1.1.0) (2024-06-24)
+
+
+### Features
+
+* **theme:** add toggle theme (dark/light) ([ce314ee](https://github.com/PunGrumpy/kmitl-wizard/commit/ce314eea6eda98d6bbbc2e223851015047524894))
+
 ## 1.0.0 (2024-06-24)
 
 
