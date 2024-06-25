@@ -20,7 +20,7 @@ export interface InformationI {
   faculty: string
   department: string
   major: string
-  Semester: string
+  semester: string
   year: string
   studentID: string
   name: string
@@ -44,7 +44,7 @@ export default class StudentScraping {
       major: this.removeNewlinesAndSpaces(
         studyTableRows[10]?.childNodes[1]?.childNodes[3]?.textContent
       ),
-      Semester: this.removeNewlinesAndSpaces(
+      semester: this.removeNewlinesAndSpaces(
         studyTableRows[12]?.childNodes[1]?.childNodes[1]?.textContent
       ),
       year: this.removeNewlinesAndSpaces(

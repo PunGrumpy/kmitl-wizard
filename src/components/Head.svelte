@@ -13,7 +13,7 @@
   />
   <div class="text-center md:text-right">
     <h1 class="text-xl font-bold">
-      ตารางเรียน {information.Semester}/{information.year}
+      Schedule of {information.semester}/{information.year}
     </h1>
     <p class="text-sm">{information.studentID} {information.name}</p>
     <p class="text-sm">
