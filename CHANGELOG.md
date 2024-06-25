@@ -1,5 +1,19 @@
 # Changelog
 
+## [1.4.0](https://github.com/PunGrumpy/kmitl-wizard/compare/v1.3.0...v1.4.0) (2024-06-25)
+
+
+### Features
+
+* **components:** add toast notification for button actions ([a46956e](https://github.com/PunGrumpy/kmitl-wizard/commit/a46956e43431769aa0ec166ceab4647cdf91f15b))
+* **toast:** add click to close ([c500bea](https://github.com/PunGrumpy/kmitl-wizard/commit/c500bea9e6c6334ffc8cbb037d6216e6d59cd0f6))
+* **utils:** improve type safety ([5c97329](https://github.com/PunGrumpy/kmitl-wizard/commit/5c97329e2ff93f7aed9043956a5c82db63cb5a25))
+
+
+### Bug Fixes
+
+* **theme-toggle:** look weird because `div` ([25cceb4](https://github.com/PunGrumpy/kmitl-wizard/commit/25cceb4391690e129dac6807de9166571a002d0c))
+
 ## [1.3.0](https://github.com/PunGrumpy/kmitl-wizard/compare/v1.2.1...v1.3.0) (2024-06-25)
 
 

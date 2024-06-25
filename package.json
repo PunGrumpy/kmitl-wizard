@@ -6,7 +6,7 @@
     "url": "https://pungrumpy.com"
   },
   "homepage": "https://github.com/PunGrumpy/kmitl-wizard",
-  "version": "1.3.0",
+  "version": "1.4.0",
   "license": "MIT",
   "type": "module",
   "scripts": {
