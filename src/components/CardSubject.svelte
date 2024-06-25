@@ -3,8 +3,9 @@
   export let subject: ScheduleI
 
   const getSectionType = () =>
-    subject.time.type === 'ทฤษฏี' ? subject.theory : subject.practice
-  const displayRoom = () => (subject.room ? `( ${subject.room} )` : '')
+    subject.time.type === 'Theory' ? subject.theory : subject.practice
+  const displayBuilding = () => (subject.building ? subject.building : 'Online')
+  const displayRoom = () => (subject.room ? `( ${subject.room} )` : '( GenEd )')
 </script>
 
 <div
@@ -20,7 +21,12 @@
   <div
     class="flex justify-between text-xs text-zinc-800 dark:text-zinc-300 mt-2"
   >
-    <p class="whitespace-nowrap">Section ({getSectionType()})</p>
-    <p class="whitespace-nowrap">{subject.building} {displayRoom()}</p>
+    <p class="whitespace-nowrap">
+      Section <span class="font-semibold">{getSectionType()}</span>
+    </p>
+    <p class="whitespace-nowrap">
+      {displayBuilding()}
+      {displayRoom()}
+    </p>
   </div>
 </div>

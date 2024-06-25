@@ -92,7 +92,7 @@ export default class StudentScraping {
     )
     const [start, end] = timeData[1].split('-')
     const type =
-      timeData[2]?.replace(/น\.|\(|\)/g, '')[0] === 'ท' ? 'ทฤษฏี' : 'ปฏิบัติ'
+      timeData[2]?.replace(/น\.|\(|\)/g, '')[0] === 'ท' ? 'Theory' : 'Practice'
 
     return {
       order: childNodes[1]?.textContent ?? '',

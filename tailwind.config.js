@@ -9,6 +9,5 @@ export default {
       }
     }
   },
-  plugins: [],
-  safelist: process.env.NODE_ENV === 'development' ? [{ pattern: /./ }] : []
+  plugins: []
 }
