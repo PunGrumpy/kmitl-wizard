@@ -26,7 +26,7 @@
     <thead class="bg-zinc-200 dark:bg-zinc-900">
       <tr>
         <th scope="col" class="p-2" />
-        {#each hours as hour (hour)}
+        {#each hours as hour}
           {#if hour < 20 - 1}
             <th
               scope="col"
@@ -44,7 +44,7 @@
         <tr
           class="{i % 2 === 0
             ? 'bg-zinc-50 dark:bg-zinc-700'
-            : 'bg-white dark:bg-zinc-800'} hover:bg-zinc-100 dark:hover:bg-zinc-600"
+            : 'bg-white dark:bg-zinc-800'} hover:bg-zinc-100 dark:hover:bg-zinc-600 transition-colors"
         >
           <th
             scope="row"
