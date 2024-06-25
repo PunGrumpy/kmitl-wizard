@@ -3,9 +3,22 @@
     <p>
         <sub>A schedule table extension for KMITL students</sub>
     </p>
-    <p>
-        <img src=".github/images/preview.png" alt="Preview" width="100%" style="border-radius: 5px;">
-    </p>
+    <table>
+        <tr>
+            <td>
+                <img src=".github/images/preview-dark.png" alt="Preview" width="100%" style="border-radius: 5px;">
+                <p align="center">
+                    Preview in dark mode
+                </p>
+            </td>
+            <td>
+                <img src=".github/images/preview-light.png" alt="Preview" width="100%" style="border-radius: 5px;">
+                <p align="center">
+                    Preview in light mode
+                </p>
+            </td>
+        </tr>
+    </table>
 </div>
 
 ## 🔮 Features
