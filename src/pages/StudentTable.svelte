@@ -39,7 +39,7 @@
 >
   <div
     bind:this={captureScreen}
-    class="bg-white dark:bg-zinc-800 p-4 shadow-lg rounded-lg"
+    class="backdrop-blur-xs bg-white-70 dark:bg-black-70 p-4 shadow-lg rounded-lg"
   >
     <Head {information} />
     <div class="my-4">

@@ -20,7 +20,9 @@
 </script>
 
 <div class="overflow-x-auto">
-  <table class="min-w-full bg-zinc-50 dark:bg-zinc-800 rounded-lg">
+  <table
+    class="min-w-full bg-white-70 dark:bg-black-70 backdrop-blur-xs rounded-lg"
+  >
     <thead class="bg-zinc-200 dark:bg-zinc-900">
       <tr>
         <th scope="col" class="p-2" />

@@ -9,7 +9,7 @@
 </script>
 
 <div
-  class="bg-zinc-50 dark:bg-zinc-800 shadow-md rounded-lg p-4 transition-shadow flex flex-col justify-between h-full"
+  class="backdrop-blur-xs bg-white-70 dark:bg-black-70 shadow-md rounded-lg p-4 transition-shadow flex flex-col justify-between h-full"
 >
   <div class="flex justify-between text-xs text-zinc-600 dark:text-zinc-400">
     <p>{subject.time.type}</p>
