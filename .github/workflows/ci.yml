@@ -42,7 +42,7 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: kmitl-wizard
-          path: dist/dist.zip
+          path: dist/kmitl-wizard.zip
 
   release:
     strategy:
