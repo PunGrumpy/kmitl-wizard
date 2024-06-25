@@ -1,10 +1,12 @@
 import type { ScheduleI } from './StudentScraping'
 
-const downloadBlob = (blob: Blob, name = 'file.txt') => {
-  if ((window.navigator as any) && (window.navigator as any).msSaveOrOpenBlob)
-    return (window.navigator as any).msSaveOrOpenBlob(blob)
-  const data = window.URL.createObjectURL(blob)
+const downloadBlob = (blob: Blob, name = 'file.txt'): void => {
+  const navigator = window.navigator as any
+  if (navigator?.msSaveOrOpenBlob) {
+    return navigator.msSaveOrOpenBlob(blob)
+  }
 
+  const data = window.URL.createObjectURL(blob)
   const link = document.createElement('a')
   link.href = data
   link.download = name
@@ -27,19 +29,19 @@ const createTimeSlot = (
   schedule: ScheduleI[],
   day: string = 'จ.'
 ): Array<undefined | (ScheduleI & { colSpan: number })> => {
-  const timeSlot = []
-  const findDay = schedule.filter(item => item.time.day == day)
-  let colSlot = 44
+  const timeSlot: Array<undefined | (ScheduleI & { colSpan: number })> = []
+  const findDay = schedule.filter(item => item.time.day === day)
+  const colSlot = 44
   const startTime = 8 * 60
   const timeInterval = 15
-  for (let i = 0; colSlot > i; i++) {
+
+  for (let i = 0; i < colSlot; i++) {
     const currentTime = startTime + i * timeInterval
     const hours = Math.floor(currentTime / 60)
     const minutes = currentTime % 60
-    const formattedTime = `${String(hours).padStart(2, '0')}:${String(
-      minutes
-    ).padStart(2, '0')}`
-    const findTime = findDay.find(item => item.time.start == formattedTime)
+    const formattedTime = `${String(hours).padStart(2, '0')}:${String(minutes).padStart(2, '0')}`
+
+    const findTime = findDay.find(item => item.time.start === formattedTime)
     if (findTime) {
       const colSpan = calculateNumberOfCols(
         findTime.time.start,
@@ -48,7 +50,9 @@ const createTimeSlot = (
       )
       i += colSpan - 1
       timeSlot.push({ ...findTime, colSpan })
-    } else timeSlot.push(undefined)
+    } else {
+      timeSlot.push(undefined)
+    }
   }
   return timeSlot
 }
@@ -61,14 +65,12 @@ const calculateNumberOfCols = (
   const startMinutes = convertToMinutes(startTime)
   const endMinutes = convertToMinutes(endTime)
 
-  const numberOfCols = (endMinutes - startMinutes) / intervalMinutes
-
-  return numberOfCols
+  return (endMinutes - startMinutes) / intervalMinutes
 }
 
 const convertToMinutes = (time: string): number => {
-  const [hours, minutes] = time.split(':')
-  return parseInt(hours, 10) * 60 + parseInt(minutes, 10)
+  const [hours, minutes] = time.split(':').map(Number)
+  return hours * 60 + minutes
 }
 
 export { downloadBlob, createTimeSlot }

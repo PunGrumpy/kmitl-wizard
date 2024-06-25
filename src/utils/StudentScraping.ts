@@ -37,21 +37,23 @@ export default class StudentScraping {
     const studyTableRows = this.scheduleTable.querySelectorAll('tr')
 
     return {
-      faculty: this.removeNewlinesAndSpaces(studyTableRows[8]?.textContent),
+      faculty: this.removeNewlinesAndSpaces(
+        studyTableRows[8]?.textContent ?? ''
+      ),
       department: this.removeNewlinesAndSpaces(
-        studyTableRows[10]?.childNodes[1]?.childNodes[1]?.textContent
+        studyTableRows[10]?.childNodes[1]?.childNodes[1]?.textContent ?? ''
       ),
       major: this.removeNewlinesAndSpaces(
-        studyTableRows[10]?.childNodes[1]?.childNodes[3]?.textContent
+        studyTableRows[10]?.childNodes[1]?.childNodes[3]?.textContent ?? ''
       ),
       semester: this.removeNewlinesAndSpaces(
-        studyTableRows[12]?.childNodes[1]?.childNodes[1]?.textContent
+        studyTableRows[12]?.childNodes[1]?.childNodes[1]?.textContent ?? ''
       ),
       year: this.removeNewlinesAndSpaces(
-        studyTableRows[12]?.childNodes[1]?.childNodes[3]?.textContent
+        studyTableRows[12]?.childNodes[1]?.childNodes[3]?.textContent ?? ''
       ),
       studentID: this.removeNewlinesAndSpaces(
-        studyTableRows[14]?.childNodes[1]?.childNodes[1]?.textContent
+        studyTableRows[14]?.childNodes[1]?.childNodes[1]?.textContent ?? ''
       ),
       name:
         studyTableRows[14]?.childNodes[1]?.childNodes[3]?.textContent?.slice(
@@ -60,22 +62,20 @@ export default class StudentScraping {
     }
   }
 
-  private removeNewlinesAndSpaces = (text: string | null): string => {
-    if (text == null) return ''
-    return text.replace(/[\n\s]/g, '')
-  }
+  private removeNewlinesAndSpaces = (text: string): string =>
+    text.replace(/[\n\s]/g, '')
 
   public getSchedule = (): ScheduleI[] => {
-    const scheduleData: Array<ScheduleI> = []
+    const scheduleData: ScheduleI[] = []
     const studyTableRows = this.scheduleTable.querySelectorAll('tr')
 
     const studyTableRowsArray = Array.from(studyTableRows)
       .filter(item => item.childNodes.length === 37)
       .slice(1)
 
-    for (const [index, data] of studyTableRowsArray.entries()) {
+    for (const data of studyTableRowsArray) {
       scheduleData.push(this.parseScheduleData(data.childNodes))
-      if (data.childNodes[21]?.textContent != '-') {
+      if (data.childNodes[21]?.textContent !== '-') {
         scheduleData.push(this.parseScheduleData(data.childNodes, 2))
       }
     }
@@ -118,18 +118,16 @@ export default class StudentScraping {
       ? node.childNodes[offset]?.textContent ?? ''
       : node.textContent ?? ''
 
-  private sortDateTime = (data: Array<ScheduleI>): Array<ScheduleI> => {
+  private sortDateTime = (data: ScheduleI[]): ScheduleI[] => {
+    const order = ['จ.', 'อ.', 'พ.', 'พฤ.', 'ศ.', 'อา.']
     return data
       .sort((a, b) => {
         const timeToMinutes = (time: string) => {
-          const [hours, minutes] = time.split(':')
-          return parseInt(hours) * 60 + parseInt(minutes)
+          const [hours, minutes] = time.split(':').map(Number)
+          return hours * 60 + minutes
         }
         return timeToMinutes(a.time.start) - timeToMinutes(b.time.start)
       })
-      .sort((a, b) => {
-        const order = ['จ.', 'อ.', 'พ.', 'พฤ.', 'ศ.', 'อา.']
-        return order.indexOf(a.time.day) - order.indexOf(b.time.day)
-      })
+      .sort((a, b) => order.indexOf(a.time.day) - order.indexOf(b.time.day))
   }
 }
