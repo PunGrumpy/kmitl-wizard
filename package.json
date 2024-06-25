@@ -35,7 +35,6 @@
     "tslib": "2.6.3",
     "typescript": "5.5.2",
     "vite": "4.2.3",
-    "vite-plugin-auto-zip": "^1.2.0",
     "vite-plugin-zip-pack": "^1.2.3"
   },
   "trustedDependencies": [
