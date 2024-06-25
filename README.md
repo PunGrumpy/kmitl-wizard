@@ -1,7 +1,9 @@
 <div align="center">
     <h1>🧙‍♂️ KMITL Wizard Extension Chrome</h1>
     <p>
-        <sub>A schedule table extension for KMITL students</sub>
+        <sub>
+            Turn your KMITL schedule into a beautiful and interactive table with the KMITL Schedule Table Extension. This tool enhances your standard schedule, making it visually appealing and easy to navigate. Enjoy features like color-coded classes, clickable links for additional details, and customizable layouts to suit your preferences.
+        </sub>
     </p>
     <table>
         <tr>
