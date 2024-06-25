@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.5.0](https://github.com/PunGrumpy/kmitl-wizard/compare/v1.4.0...v1.5.0) (2024-06-25)
+
+
+### Features
+
+* add check new version ([f2cdc56](https://github.com/PunGrumpy/kmitl-wizard/commit/f2cdc56e50093c5e6ce8f2654a797c1f9b4645cd))
+
 ## [1.4.0](https://github.com/PunGrumpy/kmitl-wizard/compare/v1.3.0...v1.4.0) (2024-06-25)
 
 
