@@ -88,7 +88,13 @@
       class="text-center md:text-right text-xs text-orange-600 dark:text-orange-400"
     >
       <p>
-        Redesign by PunGrumpy <Icon
+        Redesign by <a
+          href="https://pungrumpy.com"
+          target="_blank"
+          rel="noopener noreferrer"
+          style="text-decoration: none; color: inherit;">PunGrumpy</a
+        >
+        <Icon
           icon="ph:ghost-fill"
           class="inline-block text-orange-600 dark:text-orange-400"
         />
