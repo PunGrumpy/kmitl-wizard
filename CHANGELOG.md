@@ -1,5 +1,18 @@
 # Changelog
 
+## [1.3.0](https://github.com/PunGrumpy/kmitl-wizard/compare/v1.2.1...v1.3.0) (2024-06-25)
+
+
+### Features
+
+* change type of course to english ([2a9709c](https://github.com/PunGrumpy/kmitl-wizard/commit/2a9709c632cb7d582058d949a66dc8b2e909140e))
+* enhance ui with transparent and blur design ([37e6627](https://github.com/PunGrumpy/kmitl-wizard/commit/37e6627e8411579ef31cfd7879fa268dbd3c846c))
+
+
+### Bug Fixes
+
+* change variable ([b2856fd](https://github.com/PunGrumpy/kmitl-wizard/commit/b2856fd66ca192b7785d7a9739568f34638c2228))
+
 ## [1.2.1](https://github.com/PunGrumpy/kmitl-wizard/compare/v1.2.0...v1.2.1) (2024-06-24)
 
 
