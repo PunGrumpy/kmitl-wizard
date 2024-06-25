@@ -6,16 +6,28 @@
   import Head from '../components/Head.svelte'
   import ScheduleTable from '../components/ScheduleTable.svelte'
   import ThemeToggle from '../components/ThemeToggle.svelte'
+  import Toast from '../components/Toast.svelte'
 
   export let schedule: Array<ScheduleI>
   export let information: InformationI
 
   let captureScreen: HTMLDivElement
+  let toastMessage: string = ''
+  let showToast: boolean = false
+
+  const showNotification = (message: string) => {
+    toastMessage = message
+    showToast = true
+    setTimeout(() => {
+      showToast = false
+    }, 3000)
+  }
 
   const screenshotToClipboard = async () => {
     const blob = await toBlob(captureScreen)
     if (blob == null) return
-    navigator.clipboard.write([new ClipboardItem({ 'image/png': blob })])
+    await navigator.clipboard.write([new ClipboardItem({ 'image/png': blob })])
+    showNotification('Screenshot copied to clipboard!')
   }
 
   const exportPng = async () => {
@@ -23,7 +35,7 @@
     if (blob == null) return
     const data = {
       studentID: information.studentID,
-      semester: information.Semester,
+      semester: information.semester,
       year: information.year,
       schedule: schedule
     }
@@ -31,6 +43,7 @@
       blob,
       `schedule_${data.studentID}_${data.semester}_${data.year}.png`
     )
+    showNotification('PNG exported successfully!')
   }
 </script>
 
@@ -82,4 +95,7 @@
       </p>
     </div>
   </footer>
+  {#if showToast}
+    <Toast message={toastMessage} />
+  {/if}
 </main>
