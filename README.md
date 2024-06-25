@@ -32,6 +32,7 @@
 - [x] Copy schedule table to clipboard
 - [x] Dark mode
 - [x] Toaster notification (click to close)
+- [x] Check for updates
 
 ## 🧑‍💻 Stacks
 
