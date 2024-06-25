@@ -76,7 +76,7 @@ To load the extension into Chrome, follow these steps:
 
 ## 🤝 Contribute
 
-We invite you to contribute to KMITLX! Here’s how you can help:
+We invite you to contribute to **KMITL WIZARD**! Here’s how you can help:
 
 - Open a pull request. We will review your code and approve it if it meets our standards. 😎
 - Report a bug by opening an issue. 🐛
