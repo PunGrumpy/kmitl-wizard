@@ -29,17 +29,13 @@
   }
 </script>
 
-<div
+<button
+  on:click={toggleTheme}
   class="rounded-lg py-2 px-4 bg-orange-600 text-white text-xs hover:bg-orange-700 transition-colors flex items-center"
 >
-  <button
-    on:click={toggleTheme}
-    class="rounded-lg bg-orange-600 text-white text-xs hover:bg-orange-700 transition-colors flex items-center"
-  >
-    <Icon
-      icon={theme === 'light' ? 'ph:moon-stars-fill' : 'ph:sun-fill'}
-      class="mr-2"
-    />
-    {theme === 'light' ? 'Dark Mode' : 'Light Mode'}
-  </button>
-</div>
+  <Icon
+    icon={theme === 'light' ? 'ph:moon-stars-fill' : 'ph:sun-fill'}
+    class="mr-2"
+  />
+  {theme === 'light' ? 'Dark Mode' : 'Light Mode'}
+</button>
